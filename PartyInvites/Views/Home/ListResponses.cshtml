@@ -10,47 +10,48 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>ListResponses</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
-<p>
-    <a asp-action="MyView">Create New</a>
-</p>
-<table class="table table-bordered table-hover">
-    <thead>
-        <tr>
-            <th>
-               Name
-            </th>
-            <th>
-               Email
-            </th>
-            <th>
-              Phone
-            </th>
-            <th>
-              Yeh or Nay
-            </th>
-            
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Phone)
-            </td>
-            <td>
-                @item.WillAttend
-            </td>           
-        </tr>
-}
-    </tbody>
-</table>
+
+    <p>Click <a asp-action="MyView">here</a> to go back</p>
+  
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Phone
+                </th>
+                <th>
+                    Yeh or Nay
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Phone)
+                    </td>
+                    <td>
+                        @item.WillAttend
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </body>
 </html>
